@@ -1,0 +1,16 @@
+<h2>Dnc List</h2>
+<ul>
+  <li *ngFor="let movie of movies">
+    <p (click)="movieClicked(movie)">{{movie.name}}</p>
+  </li>
+</ul>
+
+<hr>
+
+Title <input type="text" [(ngModel)]="selectedDnc.name"/><br>
+Description <input type="text" [(ngModel)]="selectedDnc.description"/><br>
+<!--Phone Book <input type="text" [(ngModel)]="selectedDnc.phonebook"/><br>-->
+<!--Contact <select ng-model="selectedDnc.phonebook" ng-options="x for x in selectedDnc.phonebooks"></select>-->
+<button *ngIf="selectedDnc.id != -1" (click)="updateDnc()">PUT</button>
+<button *ngIf="selectedDnc.id != 1" (click)="createDnc()">POST</button>
+<button *ngIf="selectedDnc.id != -1" (click)="deleteDnc()">DELETE</button>

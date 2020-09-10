@@ -1,0 +1,8 @@
+{% block content %}
+    {% for post in posts %}
+        <p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></p>
+        <h3>Published {{ post.publish }} by {{ post.author }}</h3>
+        <h4>{{ post.body|truncatewords:30|linebreaks }}</h4>
+    {% endfor %}
+    {% include "pagination.html" with page=posts %}
+{% endblock %}
